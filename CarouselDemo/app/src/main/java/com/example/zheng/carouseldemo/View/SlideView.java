@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import com.example.zheng.carouseldemo.Adapter.SlideViewBaseAdapter;
 import com.example.zheng.carouseldemo.R;
 
+import java.lang.ref.WeakReference;
 import java.util.Timer;
 import java.util.TimerTask;
 import android.os.Handler;
@@ -35,12 +36,27 @@ public class SlideView extends FrameLayout implements ViewPager.OnPageChangeList
 
     private boolean isTouch = false;        // 是否触摸
 
-    private Handler handler = new Handler() {
+//    private Handler handler = new Handler() {
+//        @Override
+//        public void handleMessage(Message msg) {
+//            viewContainer.setCurrentItem(viewContainer.getCurrentItem() + 1);
+//        }
+//    };
+    private Handler mhandler = new MyHandler(this);
+
+
+    static class MyHandler extends Handler {
+        WeakReference<SlideView> mSlideView;
+        private MyHandler(SlideView slideView){
+            mSlideView = new WeakReference<SlideView>(slideView);
+        }
+
         @Override
         public void handleMessage(Message msg) {
-            viewContainer.setCurrentItem(viewContainer.getCurrentItem() + 1);
+            SlideView slideView = mSlideView.get();
+            slideView.viewContainer.setCurrentItem(slideView.viewContainer.getCurrentItem() + 1);
         }
-    };
+    }
 
     public SlideView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -116,7 +132,7 @@ public class SlideView extends FrameLayout implements ViewPager.OnPageChangeList
                 if (isTouch) {
                     return;
                 }
-                handler.sendEmptyMessage(0x00);
+                mhandler.sendEmptyMessage(0x00);
             }
         };
         timer.schedule(timerTask, 300, 3000);

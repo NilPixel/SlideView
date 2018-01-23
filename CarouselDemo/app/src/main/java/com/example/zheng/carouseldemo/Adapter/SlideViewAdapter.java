@@ -26,7 +26,7 @@ public class SlideViewAdapter extends SlideViewBaseAdapter {
     }
 
     /**
-     * 实现了获取Viwe的方法
+     * 实现了获取View的方法
      * 使用了ImageLoder来获取图片显示到ImageView上
      */
     @Override

@@ -8,8 +8,6 @@ public class SlideInfo {
 
     int imageId = 0;
 
-    public SlideInfo(){}
-
     public SlideInfo(int imageId) {
         this.imageId = imageId;
     }

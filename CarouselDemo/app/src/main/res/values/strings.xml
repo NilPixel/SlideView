@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CarouselDemo</string>
+    <string name="carousel_image_desc">"轮播内容图片"</string>
 </resources>
