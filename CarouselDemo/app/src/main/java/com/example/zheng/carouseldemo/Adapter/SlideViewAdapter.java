@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.example.zheng.carouseldemo.Model.SlideInfo;
 import com.example.zheng.carouseldemo.R;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -34,7 +35,8 @@ public class SlideViewAdapter extends SlideViewBaseAdapter {
         ImageView imageView;
         View view = LayoutInflater.from(context).inflate(R.layout.slide_item, null);
         imageView = view.findViewById(R.id.id_image);
-        imageView.setImageResource(slideInfos.get(position).getImageId());
+//        imageView.setImageResource(slideInfos.get(position).getImageId());
+        ImageLoader.getInstance().displayImage(slideInfos.get(position).getImageUrl(),imageView);
         return view;
     }
 
