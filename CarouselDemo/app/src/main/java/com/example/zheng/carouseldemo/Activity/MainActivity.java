@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         slideInfos.add(new SlideInfo(R.mipmap.g));
 
         List<SlideInfo> slideInfosByUrl = new ArrayList<>();
-        slideInfosByUrl.add(new SlideInfo("https://image4.suning.cn/uimg/cms/img/151660641005425483.jpg"));
-        slideInfosByUrl.add(new SlideInfo("https://image.suning.cn/uimg/aps/material/151662458452762361.jpg"));
-        slideInfosByUrl.add(new SlideInfo("https://image.suning.cn/uimg/aps/material/151661433976544381.jpg"));
-        slideInfosByUrl.add(new SlideInfo("https://image.suning.cn/uimg/aps/material/151660847439506272.jpg"));
-        slideInfosByUrl.add(new SlideInfo("https://image.suning.cn/uimg/aps/material/151634901535132616.jpg"));
-        slideInfosByUrl.add(new SlideInfo("https://image.suning.cn/uimg/aps/material/151564086165733425.jpg"));
-        slideInfosByUrl.add(new SlideInfo("https://image1.suning.cn/uimg/cms/img/151661113545922568.jpg"));
+        slideInfosByUrl.add(new SlideInfo("https://image4.cn/uimg/cms/img/151660641005425483.jpg"));
+        slideInfosByUrl.add(new SlideInfo("https://image.cn/uimg/aps/material/151662458452762361.jpg"));
+        slideInfosByUrl.add(new SlideInfo("https://image.cn/uimg/aps/material/151661433976544381.jpg"));
+        slideInfosByUrl.add(new SlideInfo("https://image.cn/uimg/aps/material/151660847439506272.jpg"));
+        slideInfosByUrl.add(new SlideInfo("https://image.cn/uimg/aps/material/151634901535132616.jpg"));
+        slideInfosByUrl.add(new SlideInfo("https://image.cn/uimg/aps/material/151564086165733425.jpg"));
+        slideInfosByUrl.add(new SlideInfo("https://image1.cn/uimg/cms/img/151661113545922568.jpg"));
         slideView.setData(new SlideViewAdapter(this, slideInfosByUrl));
 
         addContentView(slideView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
